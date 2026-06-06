@@ -181,6 +181,8 @@ This refactored model was able to help me simplify the simulation parameter m-sc
 
 ![New m-script](https://i.postimg.cc/Hk32vgYM/Init-Fcn-new.png)
 
+Both the m-scripts are available in the **'scripts/'** folder.
+
 All the remaining simulation paramters were promoted and exposed in the subsystem masks of each resistive force as shown below.
 
 **Rolling Resistance Force block:**
