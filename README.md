@@ -154,6 +154,9 @@ The following are the model parameters that were used for simulationnn:
 ## Simulation Result
 After performing model simulation, I observed the final velocity to computed appoximately 159 km/h by the baseline model.
 
+![Model_1_Final_Velocity](https://i.postimg.cc/BQTFgL2n/Model1-Final-Velocity.png)
+![Model_1_Scope_Result](https://i.postimg.cc/yxtmC1JF/Model1-Simulation-Result.png)
+
 ## Refactored Masked Subsystem Version
 ## Learning Outcomes
 
