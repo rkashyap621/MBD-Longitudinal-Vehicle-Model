@@ -215,7 +215,7 @@ In order to achieve this I moved all the masked subsystems into a custom simulin
 
 This library file is accessible is **'library/'** folder in this repository.
 
-To know more about lock links, [Click Here](https://in.mathworks.com/help/releases/R2025b/simulink/ug/lock-links-to-library.html)
+To know more about lock links functionality in Simulink library, [Click Here](https://in.mathworks.com/help/releases/R2025b/simulink/ug/lock-links-to-library.html)
 
 Once the locked library was created I replaced the older editable masked subsystems with the reusable and locked and linked masked subsystem blocks from the library for each resisting forces as shown below.
 
@@ -228,5 +228,19 @@ Since we didn't do any computational modifications, after simulation the simulat
 ![Model 3 Scope Result](https://i.postimg.cc/CLG8NBbK/Model3-Final-Velocit.png)
 
 ## Learning Outcomes
+By the implementing this project I was able the following important MBD aspects:
+ * Translating physics into Simulink
+ * Structuring equations into subsystems
+ * Using InitFcn
+ * Creating masked subsystems
+ * Parameter promotion
+ * Creating reusable library blocks
 
 ## Future Improvements
+As per standard MBD workflow, the following are the important next steps:
+ * Add test harness
+ * Add validation cases
+ * Add Stateflow-based cruise control supervisor
+ * Add PID cruise controller
+ * Add MIL testing
+ * Add requirements traceability
