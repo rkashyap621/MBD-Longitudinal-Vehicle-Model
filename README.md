@@ -165,7 +165,9 @@ After performing model simulation, I observed the final velocity to be computed 
 ### MODEL-2: Longitudinal Vehicle Model with Subsystem Masks for each Resistive Force
 Though the baseline is abe to successfully compute the vehicle velocity, it needed further modeling improvements. The first aspect it needed improvements are the global declaration of simulation parameters in m-script as **'initialization function'**.
 
-In this model, each resting force subsystems were refactored as masked subsystem.
+In this model, each resting force subsystems were refactored as masked subsystem. The refactored model is shown below.
+
+![Base Line Mode2-MDL2](https://i.postimg.cc/6qgrxW7M/Model2.png)
 
 **Rolling Resistance Force block:**
 ![Rolling Resistance](https://i.postimg.cc/Bv6CdVbT/Rolling-Resistance.png)
