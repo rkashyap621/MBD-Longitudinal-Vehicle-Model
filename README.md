@@ -155,7 +155,7 @@ The following are the model parameters that were used for simulationnn:
 All the above listed simulation parameters were defined in m-script, and the m-script was used as **'initialization funtion'** within Simulink.
 
 ## Simulation Result
-After performing model simulation, I observed the final velocity to computed appoximately 159 km/h by the baseline model.
+After performing model simulation, I observed the final velocity to be computed appoximately around 159 km/h by the baseline model.
 
 ![Model_1_Final_Velocity](https://i.postimg.cc/BQTFgL2n/Model1-Final-Velocity.png)
 
