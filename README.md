@@ -141,6 +141,15 @@ In this project, I began with the implementation of baseine model which represen
 The implemented baseline model is available in the folder **'models/'** with the file name **'MDL1_Longitudinal_Vehicle_Model.slx'**.
 
 ## Model Parameters
+The following are the model parameters that were used for simulationnn:
+ * F_T = 3000 N (Input Traction Force)
+ * m = 1200 kg (Vehicle Mass)
+ * C_r = 0.015 (Rolling Coefficient)
+ * g = 9.81 m/s² (Gravitational Acceleration)
+ * rho = 1.225 kg/m³ (Air Density)
+ * C_d = 0.32 (Drag Coefficient)
+ * A = 2.2 m² (Vehicle Frontal Area)
+ * theta = 0 rad (Road slope Area)
 
 ## Simulation Result
 
