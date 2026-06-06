@@ -134,7 +134,7 @@ $\large {\frac {dv} {dt} = \frac{1} {m} [F_T - C_rmg - \frac {1} {2} \rho C_d A 
 
 ## Simulink Implementation
 ### MODEL-1: Longitudinal Vehicle Model (Baseline Model)
-In this project, I began by implementing implementation a baseline model representing longitudinal vehicle model. The baseline model was implemented by computing each resisting force separately, summing the opposing forces, subtracting them from the input traction force, dividing by vehicle mass to get the acceleration, integrating to obtain velocity, and converting the velocity result from m/s to km/h. The implemented Simulink model is shown below.
+In this project, I began by implementing a baseline model representing the longitudinal vehicle dynamics model. The baseline model was implemented by computing each resisting force separately, summing the opposing forces, subtracting them from the input traction force, dividing by vehicle mass to get the acceleration, integrating to obtain velocity, and converting the velocity result from m/s to km/h. The implemented Simulink model is shown below.
 
 ![Base Line Model-MDL1](https://i.postimg.cc/QCwQZ8Bm/Model1.png)
 
@@ -165,13 +165,13 @@ After performing model simulation, I observed the final velocity to be computed 
 ### MODEL-2: Longitudinal Vehicle Model with Subsystem Masks for each Resistive Force
 Though the baseline is able to successfully compute the vehicle velocity, it needed further modeling improvements. The first aspect I wanted to improve was the global declaration of simulation parameters in m-script as **'initialization function'**.
 
-In this model, each resisting force subsystem were refactored as a masked subsystem. The refactored model is shown below.
+In this model, each resisting force subsystem was refactored as a masked subsystem. The refactored model is shown below.
 
 ![Model2-MDL2](https://i.postimg.cc/6qgrxW7M/Model2.png)
 
 The implemented refactored version model is available in the folder **'models/'** with the file name **'MDL2_Longitudinal_Vehicle_Model_Mask.slx'** in this repository.
 
-This refactored model was able to help me simplify the simulation parameter m-script. For better comparsion I am displaying the older and current m-scripts below.
+This refactored model was able to help me simplify the simulation parameter m-script. For better comparison, I am displaying the older and current m-scripts below.
 
 **Old Init Fcn m-script:**
 
@@ -211,15 +211,15 @@ Although the masked subsystems helped simplify the InitFcn m-script, expose simu
 
 ![Opposing Forces Lib](https://i.postimg.cc/Dw5gpTvB/Opposing-Forces-Lib.png)
 
-This library file is available in **'libraries/'** folder in this repository.
+This library file is available in the **'libraries/'** folder in this repository.
 
 To know more about lock links functionality in Simulink library, [Click Here](https://in.mathworks.com/help/releases/R2025b/simulink/ug/lock-links-to-library.html)
 
-Once the locked library was created I replaced the older editable masked subsystems with the reusable and locked and linked masked subsystem blocks from the library for each resisting force as shown below.
+Once the locked library was created, I replaced the older editable masked subsystems with reusable, locked, and linked masked subsystem blocks from the library for each resisting force, as shown below.
 
 ![Model3-MDL3](https://i.postimg.cc/Zn28zbBz/Model3.png)
 
-Since we didn't do any computational modifications, after simulation the simulation results remained consistent and exact in this refactored version model as well as shown below.
+Since no computational modifications were made, the simulation results remained consistent with the previous model versions, as shown below.
 
 ![Model 3 Final_Velocity](https://i.postimg.cc/CLG8NBbK/Model3-Final-Velocit.png)
 
