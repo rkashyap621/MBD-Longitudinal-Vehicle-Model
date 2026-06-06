@@ -169,6 +169,16 @@ In this model, each resting force subsystems were refactored as masked subsystem
 
 ![Base Line Mode2-MDL2](https://i.postimg.cc/6qgrxW7M/Model2.png)
 
+This refactored model was able to help me simplify the simulation parameter m-script. For, better comparrsion I am displaying the older and current m-scripts below.
+
+**Old Init Fcn m-script:**
+![Old m-script](https://i.postimg.cc/52p3KV4w/Init-Fcn-old.png)
+
+**New Init Fcn m-script:**
+![New m-script](https://i.postimg.cc/Hk32vgYM/Init-Fcn-new.png)
+
+All the remaining simulation paramters were promoted and exposed in the subsystem masks of each resistive force as shown below.
+
 **Rolling Resistance Force block:**
 ![Rolling Resistance](https://i.postimg.cc/Bv6CdVbT/Rolling-Resistance.png)
 
@@ -183,6 +193,8 @@ In this model, each resting force subsystems were refactored as masked subsystem
 ![Aerdynamic Drag Force](https://i.postimg.cc/3x9BfT8p/Aerodynamic-Drag-Masked-Subsystem.png)
 
 ![Aerodynamic Drag Subsystem Mask](https://i.postimg.cc/0yZfXskw/Aerodynamic-Drag-Mask-Diag.png)
+
+### MODEL-3: Longitudinal Vehicle Model with Reusable Subsystem Masks for each Resistive Force from Custom Simulink Library
 
 ## Learning Outcomes
 
