@@ -138,7 +138,7 @@ In this project, I began with the implementation of baseine model which represen
 
 ![Base Line Model-MDL1](https://i.postimg.cc/QCwQZ8Bm/Model1.png)
 
-The implemented baseline model is available in the folder 'models/' with the file name 'MDL1_Longitudinal_Vehicle_Model.slx'.
+The implemented baseline model is available in the folder **'models/'** with the file name **'MDL1_Longitudinal_Vehicle_Model.slx'**.
 
 ## Model Parameters
 
