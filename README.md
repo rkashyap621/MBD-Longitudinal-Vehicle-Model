@@ -167,17 +167,17 @@ Though the baseline is abe to successfully compute the vehicle velocity, it need
 
 In this model, each resting force subsystems were refactored as masked subsystem.
 
-Rolling Resistance Force block:
+**Rolling Resistance Force block:**
 ![Rolling Resistance](https://i.postimg.cc/Bv6CdVbT/Rolling-Resistance.png)
 
 ![Rolling Resistance Subsystem Mask](https://i.postimg.cc/K8QNp2G9/Rolling-Resistance-Mask-Diag.png)
 
-Road Grade Force block:
+**Road Grade Force block:**
 ![Road Grade](https://i.postimg.cc/bwLTVhyL/Road-Grade-Force-Masked-Subsystem.png)
 
 ![Road Grade Subsystem Block](https://i.postimg.cc/SxVr1hSr/Road-Grade-Force-Mask-Diag.png)
 
-Aerodynamic Drag Force block:
+**Aerodynamic Drag Force block:**
 ![Aerdynamic Drag Force](https://i.postimg.cc/3x9BfT8p/Aerodynamic-Drag-Masked-Subsystem.png)
 
 ![Aerodynamic Drag Subsystem Mask](https://i.postimg.cc/0yZfXskw/Aerodynamic-Drag-Mask-Diag.png)
