@@ -172,9 +172,11 @@ In this model, each resting force subsystems were refactored as masked subsystem
 This refactored model was able to help me simplify the simulation parameter m-script. For, better comparrsion I am displaying the older and current m-scripts below.
 
 **Old Init Fcn m-script:**
+
 ![Old m-script](https://i.postimg.cc/52p3KV4w/Init-Fcn-old.png)
 
 **New Init Fcn m-script:**
+
 ![New m-script](https://i.postimg.cc/Hk32vgYM/Init-Fcn-new.png)
 
 All the remaining simulation paramters were promoted and exposed in the subsystem masks of each resistive force as shown below.
