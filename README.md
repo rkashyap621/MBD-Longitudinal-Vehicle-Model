@@ -134,14 +134,14 @@ $\large {\frac {dv} {dt} = \frac{1} {m} [F_T - C_rmg - \frac {1} {2} \rho C_d A 
 
 ## Simulink Implementation
 ### MODEL-1: Longitudinal Vehicle Model (Baseline Model)
-In this project, I began with the implementation of baseine model which represents longitudinal vehicle model. The baseline mode was implemented by computing each resisting force seperately, summing the opposing forces, subtracting them from the input traction force, dividing by vehicle mass to get the acceleration, integrating to obtain velocity, and convert the velocity result from m/s to km/h. The implemented Simulink model is shown below.
+In this project, I began with the implementation of baseline model which represents longitudinal vehicle model. The baseline model was implemented by computing each resisting force separately, summing the opposing forces, subtracting them from the input traction force, dividing by vehicle mass to get the acceleration, integrating to obtain velocity, and converting the velocity result from m/s to km/h. The implemented Simulink model is shown below.
 
 ![Base Line Model-MDL1](https://i.postimg.cc/QCwQZ8Bm/Model1.png)
 
 The implemented baseline model is available in the folder **'models/'** with the file name **'MDL1_Longitudinal_Vehicle_Model.slx'** in this repository.
 
 ## Model Parameters
-The following are the model parameters that were used for simulationnn:
+The following are the model parameters that were used for simulation:
  * F_T = 3000 N (Input Traction Force)
  * m = 1200 kg (Vehicle Mass)
  * C_r = 0.015 (Rolling Coefficient)
@@ -149,13 +149,13 @@ The following are the model parameters that were used for simulationnn:
  * rho = 1.225 kg/m³ (Air Density)
  * C_d = 0.32 (Drag Coefficient)
  * A = 2.2 m² (Vehicle Frontal Area)
- * theta = 0 rad (Road Slope Area)
+ * theta = 0 rad (Road Slope Angle)
  * v = 20 m/s (Vehicle Velocity Relative to Air)
 
-All the above listed simulation parameters were defined in m-script, and the m-script was used as **'initialization funtion'** within Simulink.
+All the above listed simulation parameters were defined in m-script, and the m-script was used as **'initialization function'** within Simulink.
 
 ## Simulation Result
-After performing model simulation, I observed the final velocity to be computed appoximately around 159 km/h by the baseline model.
+After performing model simulation, I observed the final velocity to be computed approximately around 159 km/h by the baseline model.
 
 ![Model_1_Final_Velocity](https://i.postimg.cc/BQTFgL2n/Model1-Final-Velocity.png)
 
@@ -163,15 +163,15 @@ After performing model simulation, I observed the final velocity to be computed 
 
 ## Refactored Masked Subsystem Version
 ### MODEL-2: Longitudinal Vehicle Model with Subsystem Masks for each Resistive Force
-Though the baseline is abe to successfully compute the vehicle velocity, it needed further modeling improvements. The first aspect it needed improvements are the global declaration of simulation parameters in m-script as **'initialization function'**.
+Though the baseline is able to successfully compute the vehicle velocity, it needed further modeling improvements. The first aspect it needed improvement was the global declaration of simulation parameters in m-script as **'initialization function'**.
 
-In this model, each resting force subsystems were refactored as masked subsystem. The refactored model is shown below.
+In this model, each resting force subsystem were refactored as a masked subsystem. The refactored model is shown below.
 
 ![Model2-MDL2](https://i.postimg.cc/6qgrxW7M/Model2.png)
 
 The implemented refactored version model is available in the folder **'models/'** with the file name **'MDL2_Longitudinal_Vehicle_Model_Mask.slx'** in this repository.
 
-This refactored model was able to help me simplify the simulation parameter m-script. For, better comparrsion I am displaying the older and current m-scripts below.
+This refactored model was able to help me simplify the simulation parameter m-script. For better comparrsion I am displaying the older and current m-scripts below.
 
 **Old Init Fcn m-script:**
 
@@ -183,7 +183,7 @@ This refactored model was able to help me simplify the simulation parameter m-sc
 
 Both the m-scripts are available in the **'scripts/'** folder in this repository.
 
-All the remaining simulation paramters were promoted and exposed in the subsystem masks of each resistive force as shown below.
+All the remaining simulation parameters were promoted and exposed in the subsystem masks of each resistive force as shown below.
 
 **Rolling Resistance Force block:**
 ![Rolling Resistance](https://i.postimg.cc/Bv6CdVbT/Rolling-Resistance.png)
@@ -196,7 +196,7 @@ All the remaining simulation paramters were promoted and exposed in the subsyste
 ![Road Grade Subsystem Block](https://i.postimg.cc/SxVr1hSr/Road-Grade-Force-Mask-Diag.png)
 
 **Aerodynamic Drag Force block:**
-![Aerdynamic Drag Force](https://i.postimg.cc/3x9BfT8p/Aerodynamic-Drag-Masked-Subsystem.png)
+![Aerodynamic Drag Force](https://i.postimg.cc/3x9BfT8p/Aerodynamic-Drag-Masked-Subsystem.png)
 
 ![Aerodynamic Drag Subsystem Mask](https://i.postimg.cc/0yZfXskw/Aerodynamic-Drag-Mask-Diag.png)
 
@@ -207,28 +207,28 @@ This refactored subsystem was able to maintain consistent simulation results exa
 ![Model 2 Scope Result](https://i.postimg.cc/7hf3RGLK/Model2-Simulation-Result.png)
 
 ### MODEL-3: Longitudinal Vehicle Model with Reusable Subsystem Masks for each Resistive Force from Custom Simulink Library
-Though the subsystems were able to help me improve my **InitFcn m-script**, promte and expose the simulation parmeters into subsystem masks, and maintain consistent simulation result, still the subsystems were unprotected from unintentional and accidental modifictaions. This refactored model aimed to add protection to the masked subsystems so that it can be safely reused with protection against accidental modifications by ohers.
+Though the subsystems were able to help me improve my **InitFcn m-script**, promote and expose the simulation parameters into subsystem masks, and maintain consistent simulation result, still the subsystems were unprotected from unintentional and accidental modifications. This refactored model aimed to add protection to the masked subsystems so that it can be safely reused with protection against accidental modifications by others.
 
-In order to achieve this I moved all the masked subsystems into a custom simulink library and locked the links to the blocks in the library as shown below.
+In order to achieve this I moved all the masked subsystems into a custom Simulink library and locked the links to the blocks in the library as shown below.
 
 ![Opposing Forces Lib](https://i.postimg.cc/Dw5gpTvB/Opposing-Forces-Lib.png)
 
-This library file is accessible is **'library/'** folder in this repository.
+This library file is available in **'library/'** folder in this repository.
 
 To know more about lock links functionality in Simulink library, [Click Here](https://in.mathworks.com/help/releases/R2025b/simulink/ug/lock-links-to-library.html)
 
-Once the locked library was created I replaced the older editable masked subsystems with the reusable and locked and linked masked subsystem blocks from the library for each resisting forces as shown below.
+Once the locked library was created I replaced the older editable masked subsystems with the reusable and locked and linked masked subsystem blocks from the library for each resisting force as shown below.
 
 ![Model3-MDL3](https://i.postimg.cc/Zn28zbBz/Model3.png)
 
-Since we didn't do any computational modifications, after simulation the simulation results remaind consistent and exact in this refactored version model as well as shown below.
+Since we didn't do any computational modifications, after simulation the simulation results remained consistent and exact in this refactored version model as well as shown below.
 
 ![Model 3 Final_Velocity](https://i.postimg.cc/CLG8NBbK/Model3-Final-Velocit.png)
 
 ![Model 3 Scope Result](https://i.postimg.cc/02ZkPDm1/Model3-Simulation-Result.png)
 
 ## Learning Outcomes
-By the implementing this project I was able the following important MBD aspects:
+By implementing this project, I gained practical exposure to the following important MBD aspects:
  * Translating physics into Simulink
  * Structuring equations into subsystems
  * Using InitFcn
