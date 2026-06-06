@@ -225,7 +225,7 @@ Since we didn't do any computational modifications, after simulation the simulat
 
 ![Model 3 Final_Velocity](https://i.postimg.cc/CLG8NBbK/Model3-Final-Velocit.png)
 
-![Model 3 Scope Result](https://i.postimg.cc/7hf3RGLK/Model2-Simulation-Result.png))
+![Model 3 Scope Result](https://i.postimg.cc/02ZkPDm1/Model3-Simulation-Result.png)
 
 ## Learning Outcomes
 By the implementing this project I was able the following important MBD aspects:
