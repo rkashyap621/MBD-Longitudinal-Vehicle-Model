@@ -134,6 +134,10 @@ $\large {\frac {dv} {dt} = \frac{1} {m} [F_T - C_rmg - \frac {1} {2} \rho C_d A 
 
 ## Simulink Implementation
 
+In this project, I began with the implementation of baseine model which represents longitudinal vehicle model. The baseline mode was implemented by computing each resisting force seperately, summing the opposing forces, subtracting them from the input traction force, dividing by mass to get the acceleration, and integrating to obtain velocity. The implemented Simulink model is shown below.
+
+![Base Line Model-MDL1](https://i.postimg.cc/QCwQZ8Bm/Model1.png)
+
 ## Model Parameters
 
 ## Simulation Result
