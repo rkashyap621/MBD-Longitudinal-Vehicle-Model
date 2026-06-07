@@ -181,7 +181,7 @@ After performing model simulation, I observed the final velocity to be computed 
 
 ## Refactored Masked Subsystem Version
 ### MODEL-2: Longitudinal Vehicle Model with Subsystem Masks for each Resistive Force
-Though the baseline is able to successfully compute the vehicle velocity, it needed further modeling improvements. The first aspect I wanted to improve was the global declaration of simulation parameters in m-script as **'initialization function'**.
+Though the baseline is able to successfully compute the vehicle velocity, it needed further modeling improvements. The first aspect I wanted to improve was the global declaration of simulation parameters in MATLAB script as **'initialization function'**.
 
 In this model, each resisting force subsystem was refactored as a masked subsystem. The refactored model is shown below.
 
@@ -189,17 +189,17 @@ In this model, each resisting force subsystem was refactored as a masked subsyst
 
 The implemented refactored version model is available in the folder **'models/'** with the file name **'MDL2_Longitudinal_Vehicle_Model_Mask.slx'** in this repository.
 
-This refactored model was able to help me simplify the simulation parameter m-script. For better comparison, I am displaying the older and current m-scripts below.
+This refactored model was able to help me simplify the simulation parameter MATLAB script. For better comparison, I am displaying the older and current MATLAB scripts below.
 
-**Old Init Fcn m-script:**
+**Old Init Fcn MATLAB script:**
 
-![Old m-script](https://i.postimg.cc/52p3KV4w/Init-Fcn-old.png)
+![Old MATLAB script](https://i.postimg.cc/52p3KV4w/Init-Fcn-old.png)
 
-**New Init Fcn m-script:**
+**New Init Fcn MATLAB script:**
 
 ![New m-script](https://i.postimg.cc/Hk32vgYM/Init-Fcn-new.png)
 
-Both the m-scripts are available in the **'scripts/'** folder in this repository.
+Both the MATLAB scripts are available in the **'scripts/'** folder in this repository.
 
 All the remaining simulation parameters were promoted and exposed in the subsystem masks of each resistive force as shown below.
 
@@ -227,7 +227,7 @@ This refactored subsystem was able to maintain consistent simulation results exa
 ---
 
 ### MODEL-3: Longitudinal Vehicle Model with Reusable Subsystem Masks for each Resistive Force from Custom Simulink Library
-Although the masked subsystems helped simplify the InitFcn m-script, expose simulation parameters through subsystem masks, and maintain consistent simulation results, the subsystems were still directly editable inside the model. To improve reusability and reduce accidental modifications, I moved the masked force components into a custom Simulink library and used locked linked library blocks in the main model.
+Although the masked subsystems helped simplify the InitFcn MATLAB script, expose simulation parameters through subsystem masks, and maintain consistent simulation results, the subsystems were still directly editable inside the model. To improve reusability and reduce accidental modifications, I moved the masked force components into a custom Simulink library and used locked linked library blocks in the main model.
 
 ![Opposing Forces Lib](https://i.postimg.cc/Dw5gpTvB/Opposing-Forces-Lib.png)
 
