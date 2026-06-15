@@ -1,4 +1,4 @@
-# MBD Longitudinal Vehicle Model
+# MBD-Longitudinal Vehicle Model
 
 ## Project Objective
 
