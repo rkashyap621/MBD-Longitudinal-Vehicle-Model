@@ -222,7 +222,7 @@ This refactored subsystem was able to maintain consistent simulation results exa
 
 ![Model_2_Final_Velocity](https://i.postimg.cc/5NBz3Y80/Model2-Final-velocity.png)
 
-![Model 2 Scope Result](images/Model2_Simulation Result.png)
+![Model 2 Scope Result](https://i.postimg.cc/nrkVthgP/Model2-Simulation-Result.png)
 
 ---
 
