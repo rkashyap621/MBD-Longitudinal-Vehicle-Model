@@ -249,7 +249,8 @@ Since no computational modifications were made, the simulation results remained 
 
 ---
 
-Model Refinement Note: During subsequent EV system-modeling and verification work, the aerodynamic-drag implementation was revisited. In the original project versions, aerodynamic drag was evaluated using a fixed vehicle-velocity value for the simulation condition. For a fully dynamic longitudinal model, aerodynamic drag should instead be continuously evaluated using the instantaneous vehicle velocity, $\(F_a=\frac{1}{2}\rho C_d A v(t)^2\)$. This refinement will be incorporated into the existing project models and associated simulation evidence in a future repository update. The original versions are currently retained to preserve the project's development history.
+## Model Refinement Note
+During subsequent EV system-modeling and verification work, the aerodynamic-drag implementation was revisited. In the original project versions, aerodynamic drag was evaluated using a fixed vehicle-velocity value for the simulation condition. For a fully dynamic longitudinal model, aerodynamic drag should instead be continuously evaluated using the instantaneous vehicle velocity, $\(F_a=\frac{1}{2}\rho C_d A v(t)^2\)$. This refinement will be incorporated into the existing project models and associated simulation evidence in a future repository update. The original versions are currently retained to preserve the project's development history.
 
 ---
 
